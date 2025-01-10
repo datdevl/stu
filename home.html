@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HI Teacher</title>
+    <link rel='icon' href='logo.png'/>
+    <style>
+        #bro {
+            width: 100px; /* Đặt chiều rộng ảnh */
+            height: auto; /* Giữ tỷ lệ ảnh */
+            margin-left: 10px; /* Khoảng cách giữa ảnh và text */
+        }
+
+        header {
+    display: flex; /* Sử dụng Flexbox để căn hàng */
+    align-items: center; /* Căn giữa theo trục dọc */
+    background-image: url('https://minhtuanmobile.com/uploads/blog/tong-hop-ve-conan-movie-27-ngoi-sao-nam-canh-trieu-do-231204101332.jpg');
+    background-position: center; /* Căn giữa ảnh nền */
+    background-repeat: repeat; /* Lặp lại ảnh nền cả theo chiều ngang và dọc */
+    background-size: contain; /* Giữ nguyên tỷ lệ ảnh ban đầu */
+    height: 200px; /* Đặt chiều cao cụ thể cho header */
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    color: rgb(255, 255, 255); /* Đặt màu chữ */
+
+    box-sizing: border-box; /* Bao gồm padding vào kích thước */
+        }
+        button {
+            padding: 15px 20px; /* Thêm khoảng cách cho nút */
+            border: none;
+            background-color: rgb(164, 28, 28);
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        button a {
+            text-decoration: none; /* Xóa gạch chân của liên kết */
+            color: white;
+        }
+
+        footer {
+            text-align: center; /* Căn giữa nội dung footer */
+            margin-top: 20px;
+        }
+        #intro {
+            font-size: 40px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            display: inline-block;
+            background: linear-gradient(45deg, red, black, pink, green, black, indigo, black);
+            background-size: 400% 400%; /* Kích thước nền gradient lớn để tạo hiệu ứng chuyển động mượt mà */
+            background-clip: text; /* Lấy màu nền làm màu chữ */
+            color: transparent; /* Chữ không có màu sắc ban đầu */
+            animation: rainbowEffect 5s linear infinite; /* Áp dụng hiệu ứng chuyển động liên tục */
+            text-shadow: 0.5px 3px 0.5px rgba(255, 255, 255, 0.479); /* Tạo bóng cho chữ */
+        }
+
+        /* Tạo hiệu ứng chuyển động nền */
+        @keyframes rainbowEffect {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f1f1f1; /* Màu nền footer */
+            text-align: center; /* Canh giữa nội dung trong footer */
+            padding: 20px; /* Thêm padding cho footer */
+        }
+                /* Cấu hình tổng thể cho trang */
+        html, body {
+            height: 100%; /* Đảm bảo chiều cao trang đầy đủ */
+            margin: 0; /* Loại bỏ margin mặc định của trình duyệt */
+            padding: 0; /* Loại bỏ padding mặc định của trình duyệt */
+        }
+
+        /* Đảm bảo thân trang chiếm hết không gian */
+        body {
+            display: flex;
+            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        }
+
+        /* Nội dung chính của trang */
+        main {
+            flex: 1; /* Làm cho phần nội dung chiếm hết không gian còn lại */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f1f1f1; /* Màu nền footer */
+            text-align: center; /* Canh giữa nội dung trong footer */
+            padding: 0px; /* Thêm padding cho footer */
+        }
+        table {
+            border-collapse: collapse; /* Loại bỏ khoảng cách giữa các cell */
+            margin: 0 auto; /* Căn giữa bảng */
+            width: 80%; /* Đặt chiều rộng bảng */
+            }
+</style>
+</head>
+<body>
+    <header>
+        <img id="bro" src="https://levandaat.github.io/Love-Calendar/img/male.jpg" alt="Người đẹp zai nhứt zũ trụ nài:))">
+        <hr>
+        <div>
+            <h1 style="text-shadow: 5px 5px 10px rgb(0, 0, 0); /* Tạo bóng cho chữ */"><center>HÊ-LÔ WORLD</</h1>
+            <p id="intro"><em>Chào mừng tất cả ae đến với website học HTML của tớ</em></p>
+        </div>
+    </header>
+    <br>
+    <button>
+        <a href="center.html" target="_blank">TRUNG TÂM ĐIỀU KHIỂN</a>
+    </button>
+    <iframe width="100%" height="45%" src="https://www.youtube.com/embed/fGQyq0v4zCI?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+    <hr>
+    <break> </break>
+    <break></break>
+    <main>
+        <table border="5"><center>
+            <tr>
+                <th class="tieude" colspan="4"bgcolor="yellow">THÔNG TIN CÁ NHÂN</th>
+            </tr>
+            <tr bgcolor="green">
+                <th>SỞ THÍCH </th>
+                <th>EMAIL</th> 
+                <th>SĐT</th>
+                <th>Địa chỉ</th>
+            </tr>
+            <tr bgcolor="pink">
+                <th colspan="1"> Ăn</th>
+                <th rowspan="4"> levandaat@gmail.com</th>
+                <th rowspan="4">0345.335.303</th>
+                <th rowspan="4">VietNam</th>
+            </tr>
+            <tr bgcolor="pink">
+                <th>Ngủ </th>
+            </tr>
+            <tr bgcolor="pink">
+                <th>Chơi</th>
+            </tr>
+        </center></table>
+        <br>
+    <form>
+        <input type="text" name="fullname" placeholder="Để lại comment cho chúng tôi ...">
+        <input type="submit" value="gửi">
+    </form>
+    <button style="position: fixed; bottom: 15px; right: 20px; background-color: #f90000; border: none; border-radius: 100px; padding: 10px 15px; font-family: 'Montserrat', sans-serif; font-size: 16px; color: white; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2); cursor: pointer; transition: all 0.1s ease;">
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 16px;">Đăng Xuất</a>
+    </button>
+       
+    <footer>
+        <hr>
+        <p style="background-color:yellow">Development by Đạt VL</p>
+    </footer>
+</body>
+</html>

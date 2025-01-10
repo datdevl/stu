@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển Văn Bản Thành Giọng Nói</title>
+    <link rel='icon' href='logo.png'/>
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <style>
+        /* Reset margin và padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ff7eb3, #ff758c, #ff5f6d);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #ff5f6d;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            border: 2px solid #ff5f6d;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #ff758c;
+            box-shadow: 0 0 10px rgba(255, 117, 140, 0.5);
+        }
+
+        button {
+            background-color: #ff5f6d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #ff758c;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ff5f6d;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chuyển Văn Bản Thành Giọng Nói</h1>
+        <textarea id="text" placeholder="Nhập văn bản của bạn tại đây..."></textarea>
+        <br>
+        <button id="speak">Đọc Văn Bản</button>
+        <select id="voiceSelect" style="display: none;"></select>
+        <br>
+        <button id="toggleMode">Chuyển Đổi Phương Thức</button>
+        <div class="footer">© 2024 - Ứng dụng chuyển văn bản thành giọng nói Development by Đạt Vãi Lò Tôn</div>
+    </div>
+
+    <script>
+        let mode = 'responsivevoice'; // Mặc định sử dụng ResponsiveVoice
+        const voiceSelect = document.getElementById('voiceSelect');
+        const speakButton = document.getElementById('speak');
+        const toggleModeButton = document.getElementById('toggleMode');
+        const synth = window.speechSynthesis;
+
+        // Hàm tải danh sách các giọng nói (cho Web Speech API)
+        function loadVoices() {
+            const voices = synth.getVoices();
+            voiceSelect.innerHTML = ''; // Xóa các lựa chọn cũ
+
+            voices.forEach(voice => {
+                const option = document.createElement('option');
+                option.value = voice.name;
+                option.textContent = `${voice.name} (${voice.lang})`;
+                if (voice.lang === 'vi-VN') {
+                    option.selected = true; // Tự động chọn tiếng Việt nếu có
+                }
+                voiceSelect.appendChild(option);
+            });
+        }
+
+        // Tải giọng nói (vì một số trình duyệt cần thời gian để tải)
+        synth.onvoiceschanged = loadVoices;
+
+        // Hàm đọc văn bản bằng Web Speech API
+        function speakWithWebSpeech() {
+            const text = document.getElementById('text').value;
+            if (!text) {
+                alert('Vui lòng nhập văn bản!');
+                return;
+            }
+
+            const speech = new SpeechSynthesisUtterance(text);
+            const selectedVoice = voiceSelect.value;
+            speech.voice = synth.getVoices().find(voice => voice.name === selectedVoice);
+
+            if (speech.voice) {
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert('Không tìm thấy giọng nói phù hợp!');
+            }
+        }
+
+        // Hàm đọc văn bản bằng ResponsiveVoice
+        function speakWithResponsiveVoice() {
+            const text = document.getElementById('text').value;
+            if (!text) {
+                alert('Vui lòng nhập văn bản!');
+                return;
+            }
+
+            // Gọi ResponsiveVoice với giọng tiếng Việt
+            responsiveVoice.speak(text, "Vietnamese Female");
+        }
+
+        // Xử lý khi nhấn nút "Đọc Văn Bản"
+        speakButton.addEventListener('click', () => {
+            if (mode === 'webspeech') {
+                speakWithWebSpeech();
+            } else if (mode === 'responsivevoice') {
+                speakWithResponsiveVoice();
+            }
+        });
+
+        // Chuyển đổi giữa hai phương thức
+        toggleModeButton.addEventListener('click', () => {
+            if (mode === 'webspeech') {
+                mode = 'responsivevoice';
+                voiceSelect.style.display = 'none'; // Ẩn danh sách giọng nói
+                alert('Chuyển sang chế độ ResponsiveVoice');
+            } else {
+                mode = 'webspeech';
+                voiceSelect.style.display = ''; // Hiển thị danh sách giọng nói
+                loadVoices(); // Tải lại giọng nói
+                alert('Chuyển sang chế độ Web Speech API');
+            }
+        });
+    </script>
+</body>
+</html>
