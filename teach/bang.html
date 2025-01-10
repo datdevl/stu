@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo bảng trong HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hướng dẫn tạo bảng trong HTML</h1>
+    <p>Bảng (<code>&lt;table&gt;</code>) là một phần tử được sử dụng để hiển thị dữ liệu dưới dạng lưới. Dưới đây là một số ví dụ:</p>
+
+    <div class="example">
+        <h2>1. Bảng cơ bản</h2>
+        <p>Đây là cách tạo bảng đơn giản với hàng và cột:</p>
+        <pre><code>
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Họ và Tên&lt;/th&gt;
+    &lt;th&gt;Tuổi&lt;/th&gt;
+    &lt;th&gt;Thành phố&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Nguyễn Văn A&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Hà Nội&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+        </code></pre>
+        <table>
+            <tr>
+                <th>Họ và Tên</th>
+                <th>Tuổi</th>
+                <th>Thành phố</th>
+            </tr>
+            <tr>
+                <td>Nguyễn Văn A</td>
+                <td>25</td>
+                <td>Hà Nội</td>
+            </tr>
+            <tr>
+                <td>Trần Thị B</td>
+                <td>30</td>
+                <td>Đà Nẵng</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <hr>
+        <p>Học thêm về HTML tại <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" target="_blank">MDN Web Docs</a>.</p>
+    </footer>
+</body>
+</html>

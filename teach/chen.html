@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn chèn mọi thứ trong HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        iframe, video, img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+        iframe {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hướng dẫn chèn mọi thứ trong HTML</h1>
+    <p>HTML cho phép bạn chèn nhiều loại nội dung như hình ảnh, video, khung nội tuyến (iframe), và nhiều hơn nữa. Dưới đây là một số ví dụ:</p>
+
+    <div class="example">
+        <h2>1. Chèn hình ảnh</h2>
+        <p>Hình ảnh được chèn bằng thẻ <code>&lt;img&gt;</code>:</p>
+        <pre><code>&lt;img src="image.jpg" alt="Mô tả hình ảnh"&gt;</code></pre>
+        <img src="https://via.placeholder.com/400x200" alt="Ví dụ hình ảnh">
+    </div>
+
+    <div class="example">
+        <h2>2. Chèn video</h2>
+        <p>Video có thể được nhúng bằng thẻ <code>&lt;video&gt;</code>:</p>
+        <pre><code>
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Trình duyệt của bạn không hỗ trợ video.
+&lt;/video&gt;
+        </code></pre>
+        <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
+    </div>
+
+    <div class="example">
+        <h2>3. Chèn khung nội tuyến (iframe)</h2>
+        <p>Bạn có thể nhúng nội dung từ trang web khác bằng thẻ <code>&lt;iframe&gt;</code>:</p>
+        <pre><code>
+&lt;iframe src="https://www.example.com" width="600" height="400"&gt;&lt;/iframe&gt;
+        </code></pre>
+        <iframe src="https://www.example.com" width="600" height="400"></iframe>
+    </div>
+
+    <footer>
+        <hr>
+        <p>Học thêm về HTML tại <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN Web Docs</a>.</p>
+    </footer>
+</body>
+</html>

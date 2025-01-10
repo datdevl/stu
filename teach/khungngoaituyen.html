@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn sử dụng khung nội tuyến (iframe) trong HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hướng dẫn sử dụng khung nội tuyến (iframe) trong HTML</h1>
+    <p>Thẻ <code>&lt;iframe&gt;</code> được sử dụng để nhúng nội dung từ một trang web khác hoặc tài liệu HTML vào trang hiện tại. Dưới đây là một số ví dụ:</p>
+
+    <div class="example">
+        <h2>1. Nhúng trang web khác</h2>
+        <p>Đây là cách nhúng một trang web:</p>
+        <pre><code>&lt;iframe src="https://www.wikipedia.org" width="800" height="400"&gt;&lt;/iframe&gt;</code></pre>
+        <iframe src="https://www.wikipedia.org" title="Wikipedia"></iframe>
+    </div>
+
+    <div class="example">
+        <h2>2. Nhúng tài liệu HTML</h2>
+        <p>Bạn cũng có thể nhúng một tệp HTML từ cùng máy chủ:</p>
+        <pre><code>&lt;iframe src="example.html" width="800" height="400"&gt;&lt;/iframe&gt;</code></pre>
+        <iframe src="example.html" title="Tài liệu HTML"></iframe>
+    </div>
+
+    <footer>
+        <hr>
+        <p>Học thêm về HTML tại <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" target="_blank">MDN Web Docs</a>.</p>
+    </footer>
+</body>
+</html>

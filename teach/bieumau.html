@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo biểu mẫu trong HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        form {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hướng dẫn tạo biểu mẫu trong HTML</h1>
+    <p>Biểu mẫu (<code>&lt;form&gt;</code>) là một phần tử để thu thập dữ liệu từ người dùng. Dưới đây là một số ví dụ:</p>
+
+    <div class="example">
+        <h2>1. Biểu mẫu cơ bản</h2>
+        <p>Đây là một biểu mẫu với các trường cơ bản:</p>
+        <pre><code>
+&lt;form&gt;
+  &lt;label for="name"&gt;Họ và Tên:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;button type="submit"&gt;Gửi&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+        <form>
+            <label for="name">Họ và Tên:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Gửi</button>
+        </form>
+    </div>
+
+    <footer>
+        <hr>
+        <p>Học thêm về HTML tại <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank">MDN Web Docs</a>.</p>
+    </footer>
+</body>
+</html>

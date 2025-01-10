@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo nút trong HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .example {
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn-blue {
+            background-color: #007BFF;
+            color: white;
+        }
+        .btn-red {
+            background-color: #FF4C4C;
+            color: white;
+        }
+        .btn-green {
+            background-color: #28A745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hướng dẫn tạo nút trong HTML</h1>
+    <p>Nút (<code>&lt;button&gt;</code>) là một phần tử quan trọng trong HTML để thực hiện các hành động, liên kết, hoặc kích hoạt JavaScript. Dưới đây là một số ví dụ:</p>
+
+    <div class="example">
+        <h2>1. Nút cơ bản</h2>
+        <p>Đây là cách tạo nút đơn giản:</p>
+        <pre><code>&lt;button&gt;Nút cơ bản&lt;/button&gt;</code></pre>
+        <button>Nút cơ bản</button>
+    </div>
+
+    <div class="example">
+        <h2>2. Nút với kiểu dáng</h2>
+        <p>Sử dụng CSS để thay đổi màu sắc, kích thước, và hình dạng của nút:</p>
+        <pre><code>&lt;button class="btn-blue"&gt;Nút màu xanh&lt;/button&gt;</code></pre>
+        <button class="btn-blue">Nút màu xanh</button>
+        <button class="btn-red">Nút màu đỏ</button>
+        <button class="btn-green">Nút màu xanh lá</button>
+    </div>
+
+    <div class="example">
+        <h2>3. Nút liên kết</h2>
+        <p>Tạo một nút dẫn đến một liên kết:</p>
+        <pre><code>&lt;a href="https://www.google.com" class="btn-blue"&gt;Google&lt;/a&gt;</code></pre>
+        <a href="https://www.google.com" class="btn-blue" target="_blank">Google</a>
+    </div>
+
+    <div class="example">
+        <h2>4. Nút với JavaScript</h2>
+        <p>Sử dụng JavaScript để thực hiện hành động khi nhấn nút:</p>
+        <pre><code>
+&lt;button onclick="alert('Bạn vừa nhấn nút!')"&gt;Nhấn vào tôi&lt;/button&gt;
+        </code></pre>
+        <button onclick="alert('Bạn vừa nhấn nút!')">Nhấn vào tôi</button>
+    </div>
+
+    <footer>
+        <hr>
+        <p>Học thêm về HTML tại <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a>.</p>
+    </footer>
+</body>
+</html>
