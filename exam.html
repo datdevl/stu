@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRUNG TÂM BÀI THI</title>
+    <link rel="icon" href="logo.png" />
+    <style>
+      /* Định dạng toàn bộ trang */
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      /* Hiệu ứng tuyết rơi */
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        color: white;
+        opacity: 0.8;
+        font-size: 12px;
+        animation: fall linear infinite;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh);
+        }
+      }
+
+      /* Header có hiệu ứng glass */
+      .header {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        border-radius: 10px;
+        margin: 10px auto;
+        width: 90%;
+      }
+
+      /* Container chứa bài thi */
+      .exam-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      /* Box bài thi nhỏ gọn hơn */
+      .exam-box {
+        width: 150px;
+        height: 120px;
+        background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .exam-box:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Nút mở bài thi */
+      .exam-box button {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      /* Iframe chứa bài thi */
+      .exam-iframe {
+        width: 75%;
+        height: 550px;
+        border: none;
+        margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hiệu ứng tuyết -->
+    <script>
+      function createSnow() {
+        let snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.innerHTML = "❄";
+        document.body.appendChild(snowflake);
+        snowflake.style.left = Math.random() * window.innerWidth + "px";
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+        snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+        setTimeout(() => snowflake.remove(), 5000);
+      }
+      setInterval(createSnow, 150);
+    </script>
+
+    <div class="header">🎓 Trung tâm bài thi - Azota 🎓</div>
+
+    <!-- Container chứa các bài thi -->
+    <div class="exam-container">
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/mp0kvx')"
+      >
+        <button>LSTN12</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/d7qoxe')"
+      >
+        <button>LSTN13</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/vgvnhm')"
+      >
+        <button>LSTN14</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/yvbkz2')"
+      >
+        <button>LS-FULL-TN</button>
+      </div>
+    </div>
+    <button
+      style="font-size: 1.5rem; border-radius: 0.5rem; background-color: red"
+    >
+      <a href="home.html" style="color: white; text-decoration: none">⫷⫷</a>
+    </button>
+    <!-- Khu vực hiển thị iframe bài thi -->
+    <iframe id="examFrame" class="exam-iframe" src=""></iframe>
+
+    <script>
+      function openExam(url) {
+        document.getElementById("examFrame").src = url;
+      }
+    </script>
+    <!-- Trình phát nhạc (ẩn ban đầu) -->
+    <audio id="musicPlayer">Trình duyệt của bạn không hỗ trợ phát nhạc.</audio>
+
+    <!-- Nút phát/tắt nhạc -->
+    <button
+      id="musicButton"
+      onclick="toggleMusic()"
+      style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ff4757;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 16px;
+        cursor: pointer;
+      "
+    >
+      🎵
+    </button>
+
+    <script>
+      // Danh sách các link nhạc .mp3
+      const musicLinks = [
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+      ];
+
+      let isPlaying = false;
+
+      function toggleMusic() {
+        var audio = document.getElementById("musicPlayer");
+        var button = document.getElementById("musicButton");
+
+        if (!isPlaying) {
+          // Chọn ngẫu nhiên một bài hát từ danh sách
+          var randomIndex = Math.floor(Math.random() * musicLinks.length);
+          audio.src = musicLinks[randomIndex];
+
+          // Phát nhạc
+          audio
+            .play()
+            .then(() => {
+              isPlaying = true;
+              button.innerHTML = "⏸"; // Đổi icon thành nút tạm dừng
+            })
+            .catch((error) => console.log("Lỗi phát nhạc:", error));
+        } else {
+          // Dừng nhạc
+          audio.pause();
+          isPlaying = false;
+          button.innerHTML = "🎵"; // Đổi icon thành nút phát nhạc
+        }
+      }
+    </script>
+  </body>
+</html>
