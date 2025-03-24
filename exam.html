@@ -57,7 +57,7 @@
       /* Box bài thi nhỏ gọn hơn */
       .exam-box {
         width: 150px;
-        height: 120px;
+        height: 40px;
         background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
         border-radius: 10px;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -88,12 +88,15 @@
 
       /* Iframe chứa bài thi */
       .exam-iframe {
-        width: 75%;
-        height: 550px;
+        width: 95%;
+        min-height: 80vh;
+        max-width: 1400px;
+        max-height: 95vh;
         border: none;
         margin-top: 15px;
         border-radius: 10px;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        overflow: auto;
       }
     </style>
   </head>
@@ -140,6 +143,43 @@
         onclick="openExam('https://azota.vn/de-thi/yvbkz2')"
       >
         <button>LS-FULL-TN</button>
+      </div>
+      <!-- 6 box mới được thêm vào -->
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/di7obx')"
+      >
+        <button>ANH SPEAKING</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/fwbsg4')"
+      >
+        <button>ANH VOCABULARY</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/x120fx')"
+      >
+        <button>ANH ĐỒNG-TRÁI NGHĨA</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/9yojxl')"
+      >
+        <button>ANH GRAMMAR</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/y2999k')"
+      >
+        <button>ANH SẮP XẾP</button>
+      </div>
+      <div
+        class="exam-box"
+        onclick="openExam('https://azota.vn/de-thi/5e4evc')"
+      >
+        <button>ANH WRITING</button>
       </div>
     </div>
     <button
